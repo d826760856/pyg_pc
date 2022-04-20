@@ -1,0 +1,271 @@
+// out: false
+
+// 网站头部和尾部
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+@color:#c81623;
+@bg_color: #b1191a;
+
+// 网页头部
+header {
+    height: 180px;
+    // background-color: pink;
+    .container {
+        // 顶部导航
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+            // background-color: skyblue;
+            // 左侧
+            .left {
+                a {
+                    color: @color;
+                }
+            }
+
+            // 右侧
+            .right {
+                ul {
+                    display: flex;
+                    align-items: center;
+                    margin: 0;
+                    li {
+                        list-style: none;
+                        padding: 0 16px;
+                        color: #666;
+                        a {
+                            color: #666;
+                            font-size: 12px;
+                        }
+                    }
+                    li:last-child {
+                        padding-right: 0;
+                    }
+                    li:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+        // 下方搜索框
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 105px;
+            // background-color: skyblue;
+
+            // 中部搜索框
+            .middle {
+                padding-top: 8px;
+                // 上方搜索框
+                .search {
+                    display: flex;
+                    align-items: flex-start;
+                    align-items: center;
+                    overflow: hidden;
+                    width: 538px;
+	                height: 36px;
+                    box-sizing: border-box;
+                    background-color: @bg_color;
+	                border: solid 2px @bg_color;
+                    input {
+                        margin-top: 1px;
+                        margin-left: 1px;
+                        width: 458px;
+                        height: 100%;
+                        border: 0;
+                        padding-left: 5px;
+                        // 清除input框聚焦时的边框
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    button {
+                        width: 80px;
+                        height: 100%;
+                        border: 0;
+                        color: #fff;
+                        background-color: @bg_color;
+
+                    }
+                }
+
+                // 下方搜索导航
+                ul {
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top: 4px;
+                    a {
+                        font-size: 12px;
+                    }
+                    li.active a {   
+                        color: @color;
+                    }
+                }
+            }
+
+            // 右侧购物车
+            .cart {
+                display: block;
+                margin-right: 63px;
+                width: 140px;
+	            height: 36px;
+	            background-color: #f7f7f7;
+	            border: solid 1px #dfdfdf;
+                text-align: center;
+                line-height: 36px;
+                font-size: 12px;
+                .icon-cart {
+                    color: #d84a4a;
+                }
+                span {
+                    color: #666;
+                }
+                .icon-cheveron-right {
+                    color: #999;
+                }
+            }
+        }
+        // 底部选项卡
+        .tab {
+            display: flex;
+            height: 45px;
+            width: 100%;
+            // background-color: pink;
+            // 左侧分类
+            h2 {
+                width: 210px;
+                height: 45px;
+                background-color: #b1191a;
+                font-size: 14px;
+                font-weight: 400;
+                color: #fff;
+                line-height: 45px;
+                text-align: center;
+            }
+            // 右侧导航
+            ul {
+                display: flex;
+                align-items: center;
+                height: 45px;
+                margin-left: 16px;
+                li {
+                    margin: 0 24px;
+                    &.active a {
+                        font-size: 14px;
+                    }
+                }
+                a {
+                    font-size: 16px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
+// 分界线
+.slip { 
+    margin-top: -2px;
+    border-bottom: 2px solid @bg_color;
+}
+
+// 网页尾部
+footer {
+    width: 100%;
+	height: 417px;
+	background-color: #f5f5f5;
+    // 上方网站特色
+    .top {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        // ps
+        // background-color: skyblue;
+        height: 110px;
+        border-bottom: 1px solid #ededed;
+        box-sizing: border-box;
+
+        a {
+            display: flex;
+            align-items: center;
+            .pic {
+                width: 49px;
+                height: 49px;
+            }
+            &:first-child .pic {
+                background: url('../images/icons.png') -253px -3px;
+            }
+            &:nth-child(2) .pic {
+                background: url('../images/icons.png') -255px -54px;
+            }
+            &:nth-child(3) .pic {
+                background: url('../images/icons.png') -257px -106px;
+            }
+            &:nth-child(4) .pic {
+                background: url('../images/icons.png') -258px -157px;
+            }
+            &:last-child .pic {
+                background: url('../images/icons.png') -258px -209px;
+            }
+            .desc {
+                margin-left: 7px;
+            }
+            h3 {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // 中部问题导航
+    .middle {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 20px;
+        height: 188px;
+        border-bottom: 1px solid #ededed;
+        box-sizing: border-box;
+        h2 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+        }
+        div:last-child {
+            text-align: center;
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // 底部关于我们
+    .bottom {
+        height: 120px;
+        // ps
+        // background-color: skyblue;
+        padding-top: 20px;
+        box-sizing: border-box;
+        // 上方导航
+        ul {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            li {
+                padding: 0 16px;
+            }
+        }
+        // 地址与版权
+        p {
+            text-align: center;
+        }
+        .address {
+            line-height: 20px;
+        }
+    }
+}

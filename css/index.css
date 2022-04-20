@@ -1,0 +1,965 @@
+/* 把我们所有标签的内外边距清零 */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+  font-style: normal;
+}
+/* 去掉li 的小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+button {
+  /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #c81623 !important;
+}
+button,
+input {
+  /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+}
+body {
+  /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+header {
+  height: 180px;
+}
+header .container .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+header .container .top .left a {
+  color: #c81623;
+}
+header .container .top .right ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+header .container .top .right ul li {
+  list-style: none;
+  padding: 0 16px;
+  color: #666;
+}
+header .container .top .right ul li a {
+  color: #666;
+  font-size: 12px;
+}
+header .container .top .right ul li:last-child {
+  padding-right: 0;
+}
+header .container .top .right ul li:first-child {
+  padding-left: 0;
+}
+header .container .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 105px;
+}
+header .container .bottom .middle {
+  padding-top: 8px;
+}
+header .container .bottom .middle .search {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  overflow: hidden;
+  width: 538px;
+  height: 36px;
+  box-sizing: border-box;
+  background-color: #b1191a;
+  border: solid 2px #b1191a;
+}
+header .container .bottom .middle .search input {
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 458px;
+  height: 100%;
+  border: 0;
+  padding-left: 5px;
+}
+header .container .bottom .middle .search input:focus {
+  outline: none;
+}
+header .container .bottom .middle .search button {
+  width: 80px;
+  height: 100%;
+  border: 0;
+  color: #fff;
+  background-color: #b1191a;
+}
+header .container .bottom .middle ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 4px;
+}
+header .container .bottom .middle ul a {
+  font-size: 12px;
+}
+header .container .bottom .middle ul li.active a {
+  color: #c81623;
+}
+header .container .bottom .cart {
+  display: block;
+  margin-right: 63px;
+  width: 140px;
+  height: 36px;
+  background-color: #f7f7f7;
+  border: solid 1px #dfdfdf;
+  text-align: center;
+  line-height: 36px;
+  font-size: 12px;
+}
+header .container .bottom .cart .icon-cart {
+  color: #d84a4a;
+}
+header .container .bottom .cart span {
+  color: #666;
+}
+header .container .bottom .cart .icon-cheveron-right {
+  color: #999;
+}
+header .container .tab {
+  display: flex;
+  height: 45px;
+  width: 100%;
+}
+header .container .tab h2 {
+  width: 210px;
+  height: 45px;
+  background-color: #b1191a;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+}
+header .container .tab ul {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  margin-left: 16px;
+}
+header .container .tab ul li {
+  margin: 0 24px;
+}
+header .container .tab ul li.active a {
+  font-size: 14px;
+}
+header .container .tab ul a {
+  font-size: 16px;
+  color: #333;
+}
+.slip {
+  margin-top: -2px;
+  border-bottom: 2px solid #b1191a;
+}
+footer {
+  width: 100%;
+  height: 417px;
+  background-color: #f5f5f5;
+}
+footer .top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 110px;
+  border-bottom: 1px solid #ededed;
+  box-sizing: border-box;
+}
+footer .top a {
+  display: flex;
+  align-items: center;
+}
+footer .top a .pic {
+  width: 49px;
+  height: 49px;
+}
+footer .top a:first-child .pic {
+  background: url('../images/icons.png') -253px -3px;
+}
+footer .top a:nth-child(2) .pic {
+  background: url('../images/icons.png') -255px -54px;
+}
+footer .top a:nth-child(3) .pic {
+  background: url('../images/icons.png') -257px -106px;
+}
+footer .top a:nth-child(4) .pic {
+  background: url('../images/icons.png') -258px -157px;
+}
+footer .top a:last-child .pic {
+  background: url('../images/icons.png') -258px -209px;
+}
+footer .top a .desc {
+  margin-left: 7px;
+}
+footer .top a h3 {
+  font-size: 14px;
+}
+footer .middle {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  height: 188px;
+  border-bottom: 1px solid #ededed;
+  box-sizing: border-box;
+}
+footer .middle h2 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+footer .middle div:last-child {
+  text-align: center;
+}
+footer .middle div:last-child h2 {
+  margin-bottom: 0;
+}
+footer .bottom {
+  height: 120px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+footer .bottom ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+footer .bottom ul li {
+  padding: 0 16px;
+}
+footer .bottom p {
+  text-align: center;
+}
+footer .bottom .address {
+  line-height: 20px;
+}
+.main {
+  position: relative;
+  margin-bottom: 25px;
+}
+.main > aside {
+  position: absolute;
+  left: -76px;
+  top: 167px;
+  width: 66px;
+  height: auto;
+  background-color: #f7f7f7;
+}
+.main > aside ul {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.main > aside ul li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ededed;
+  box-sizing: border-box;
+}
+.main > aside ul li a {
+  display: inline-block;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+  height: 100%;
+}
+.main > aside ul .current a {
+  background-color: #c81623;
+  color: #fff;
+}
+.main > aside ul .current a:hover {
+  color: #fff !important;
+}
+.pyg_toolbar {
+  position: fixed;
+  right: -264px;
+  top: 0;
+  width: 270px;
+  height: 100%;
+  z-index: 1;
+  background-color: #eceaea;
+}
+.pyg_toolbar .tabList {
+  position: absolute;
+  height: 100%;
+  border-right: 6px solid #7a6e6e;
+}
+.pyg_toolbar .tabList li:hover {
+  background-color: #c81623;
+}
+.pyg_toolbar .tabList li:hover span.hide {
+  background-color: #c81623;
+}
+.pyg_toolbar .tabList ul {
+  width: 100%;
+  height: 100%;
+}
+.pyg_toolbar .tabList ul li {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 1px;
+  border-radius: 3px 0 0 3px;
+  background-color: #7a6e6e;
+}
+.pyg_toolbar .tabList ul li i {
+  display: inline-block;
+  width: 19px;
+  height: 18px;
+  margin-left: 8px;
+  margin-top: 8px;
+  background: url("../images/cartPanelViewIcons.png");
+}
+.pyg_toolbar .tabList ul li a {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px 0 0 3px;
+}
+.pyg_toolbar .tabList ul li a .hide {
+  position: absolute;
+  display: inline-block;
+  left: 35px;
+  top: 0;
+  width: 70px;
+  height: 35px;
+  z-index: 0;
+  border-radius: 3px 0 0 3px;
+  background-color: #7a6e6e;
+  transition: transform 0.5s;
+  color: #fff;
+  line-height: 35px;
+  text-align: center;
+}
+.pyg_toolbar .tabList ul li:not(.current):hover .hide {
+  transform: translateX(-103px);
+}
+.pyg_toolbar .tabList ul li:last-child {
+  border-bottom: 0;
+}
+.pyg_toolbar .tabList .centerNav {
+  position: absolute;
+  width: 35px;
+  height: 107px;
+  left: -29px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pyg_toolbar .tabList .centerNav ul li:first-child i {
+  margin-left: 6px;
+  background-position: -56px -9px;
+}
+.pyg_toolbar .tabList .centerNav ul li:nth-child(2) i {
+  background-position: -56px -57px;
+}
+.pyg_toolbar .tabList .centerNav ul li:last-child i {
+  background-position: -56px -108px;
+}
+.pyg_toolbar .tabList .centerNav ul li:last-child {
+  border-bottom: 0;
+}
+.pyg_toolbar .tabList .bottomNav {
+  position: absolute;
+  left: -29px;
+  bottom: 0;
+  width: 35px;
+  height: 71px;
+}
+.pyg_toolbar .tabList .bottomNav li:first-child i {
+  background-position: -56px -258px;
+}
+.pyg_toolbar .tabList .bottomNav li:last-child i {
+  background-position: -56px -307px;
+}
+.pyg_toolbar .tabList li.current a {
+  background-color: #c81623;
+}
+.pyg_toolbar .tabList li.current a span {
+  background-color: #c81623;
+}
+.pyg_toolbar .tabContent {
+  width: 100%;
+  height: 100%;
+}
+.pyg_toolbar .tabContent h3 {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 400;
+}
+.pyg_toolbar .tabContent h3 i {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 13px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 17px;
+  background: url("../images/cartPanelViewIcons.png");
+}
+.pyg_toolbar .tabContent h3 .content1 {
+  background-position: -1px -1px;
+}
+.pyg_toolbar .tabContent h3 .content2 {
+  background-position: -1px -49px;
+}
+.pyg_toolbar .tabContent h3 .content3 {
+  background-position: -1px -100px;
+}
+.pyg_toolbar .tabContent h3 span:first-of-type {
+  padding-left: 37px;
+  color: #5e5050;
+  font-size: 16px;
+}
+.pyg_toolbar .tabContent h3 a {
+  position: absolute;
+  display: inline-block;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: url("../images/cartPanelViewIcons.png");
+  background-position: -2px -251px;
+  transition: all 0.3s;
+}
+.pyg_toolbar .tabContent h3 a:hover {
+  transform-origin: center center;
+  transform: translateY(-50%) rotate(180deg);
+}
+.pyg_toolbar .tabContent li {
+  position: absolute;
+  display: none;
+  width: calc(100% - 6px);
+  height: calc(100% - 40px);
+  margin-left: 6px;
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: #eceaea;
+}
+.pyg_toolbar .tabContent .show {
+  display: block;
+}
+.pyg_advertise {
+  display: flex;
+  height: 467px;
+}
+.pyg_advertise aside {
+  width: 210px;
+  height: 100%;
+  background-color: #c81623;
+}
+.pyg_advertise aside nav {
+  padding-top: 0;
+  box-sizing: border-box;
+}
+.pyg_advertise aside nav a {
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 31px;
+}
+.pyg_advertise aside nav li {
+  position: relative;
+}
+.pyg_advertise aside nav li i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+}
+.pyg_advertise aside nav li:hover {
+  background-color: #fff;
+}
+.pyg_advertise aside nav li:hover a {
+  color: #c81623;
+}
+.pyg_advertise aside nav li:last-child {
+  height: 33px;
+}
+.pyg_advertise .center .swiper {
+  width: 720px;
+  height: 457px;
+  margin: 10px 10px 0;
+  --swiper-theme-color: rgba(255, 255, 255, 0.9);
+}
+.pyg_advertise .center .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.pyg_advertise .center .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pyg_advertise .center .swiper-pagination-bullet {
+  transition: all 0.3s;
+  width: 30px;
+  height: 6px;
+  border-radius: 5px;
+}
+.pyg_advertise .center .swiper-pagination-bullet-active {
+  width: 40px;
+}
+.pyg_advertise .right {
+  width: 250px;
+  height: 457px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.pyg_advertise .right .top {
+  display: flex;
+  justify-content: space-between;
+  height: 22px;
+  border-bottom: 1px dotted #ccc;
+}
+.pyg_advertise .right .top h2 {
+  margin-left: 15px;
+  font-size: 14px;
+  color: #333;
+}
+.pyg_advertise .right .top a {
+  color: #333;
+}
+.pyg_advertise .right .news {
+  height: 130px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.pyg_advertise .right .news li {
+  margin-bottom: 6px;
+}
+.pyg_advertise .right .news li span {
+  font-weight: 700;
+}
+.pyg_advertise .right .news li:first-child {
+  margin-top: 6px;
+}
+.pyg_advertise .right .news li:last-child {
+  margin-bottom: 0;
+}
+.pyg_advertise .right .modelChose {
+  display: flex;
+  flex-wrap: wrap;
+  height: 210px;
+  margin-bottom: 8px;
+}
+.pyg_advertise .right .modelChose > a {
+  min-width: 60px;
+  height: 68px;
+  border: 1px solid #ccc;
+  border-right: 0;
+  border-bottom: 0;
+  text-align: center;
+}
+.pyg_advertise .right .modelChose > a .pic {
+  width: 26px;
+  height: 25px;
+  margin-left: 17px;
+  margin-top: 13px;
+  margin-bottom: 8px;
+  background-image: url("../images/icons.png");
+}
+.pyg_advertise .right .modelChose > a:nth-child(4n + 1) {
+  border-left: 0;
+  min-width: 63px;
+}
+.pyg_advertise .right .modelChose > a:nth-child(4n + 1) .pic {
+  margin-left: 20px;
+}
+.pyg_advertise .right .modelChose > a:nth-child(4n + 3) .pic {
+  margin-left: 14px;
+}
+.pyg_advertise .right .modelChose > a:nth-child(4n + 4) {
+  min-width: 62px;
+}
+.pyg_advertise .right .modelChose > a:nth-child(n + 9) {
+  border-bottom: 1px solid #ccc;
+}
+.pyg_advertise .right .modelChose > a:nth-child(n + 5) {
+  margin-top: -1px;
+}
+.pyg_recommend {
+  display: flex;
+  height: 163px;
+  margin-top: 10px;
+  background-color: skyblue;
+}
+.pyg_recommend h2 {
+  width: 206px;
+  height: 100%;
+  padding-top: 30px;
+  box-sizing: border-box;
+  background-color: #5c5251;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.pyg_recommend h2 p {
+  margin-top: 6px;
+}
+.pyg_recommend .list {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #ebebeb;
+}
+.pyg_recommend .list ul {
+  display: flex;
+  flex: 1;
+}
+.pyg_recommend .list ul li {
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid #ddd;
+}
+.pyg_recommend .list ul li:last-child {
+  border-right: 0;
+}
+.pyg_recommend .list a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.pyg_recommend .list a img {
+  width: 100%;
+}
+.pyg_guessLike {
+  height: 260px;
+  margin-top: 15px;
+}
+.pyg_guessLike .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 37px;
+}
+.pyg_guessLike .top .title {
+  font-size: 18px;
+  line-height: 1;
+  color: #333;
+}
+.pyg_guessLike .top .more {
+  position: relative;
+  margin-right: 20px;
+}
+.pyg_guessLike .top .more span {
+  margin-right: 17px;
+}
+.pyg_guessLike .top .more i {
+  position: absolute;
+  right: 0;
+  top: -3px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 5px;
+  background-image: url("../images/icons.png");
+  background-position: -421px -111px;
+}
+.pyg_guessLike .list {
+  height: 230px;
+  border: 1px solid #ededed;
+}
+.pyg_guessLike .list ul {
+  display: flex;
+  height: 100%;
+}
+.pyg_guessLike .list ul li {
+  flex: 1;
+  padding-top: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.pyg_guessLike .list ul p {
+  margin-bottom: 10px;
+  border-right: 1px solid #ededed;
+}
+.pyg_guessLike .list ul p span:first-child {
+  display: inline-block;
+  width: 120px;
+  margin-top: 5px;
+}
+.pyg_guessLike .list ul p span:last-child {
+  color: #df3033;
+  display: block;
+  text-align: left;
+  margin-left: 36px;
+  margin-top: 2px;
+  font-size: 18px;
+  line-height: 1;
+}
+.pyg_guessLike .list ul p span:last-child i {
+  font-size: 12px;
+}
+.pyg_interest {
+  height: 432px;
+  margin-top: 30px;
+}
+.pyg_interest h2 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+}
+.pyg_interest section {
+  display: flex;
+  height: 405px;
+  border: 1px solid #ededed;
+}
+.pyg_interest section .rank {
+  display: inline-block;
+  width: 404px;
+  height: 405px;
+}
+.pyg_interest section .rank img {
+  width: 100%;
+  height: 100%;
+}
+.pyg_interest section .goodStaff {
+  width: 227px;
+  height: 100%;
+  text-align: center;
+}
+.pyg_interest section .goodStaff a {
+  display: inline-block;
+}
+.pyg_interest section .goodStaff a img {
+  width: 100%;
+}
+.pyg_interest section .goodStaff a:first-of-type {
+  border-bottom: 1px solid #ededed;
+}
+.pyg_interest section .goodStaff a:last-child {
+  width: 226px;
+}
+.pyg_interest section .goodStaff h3 {
+  width: 190px;
+  height: 39px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #ededed;
+  line-height: 40px;
+  color: #333;
+  font-size: 14px;
+}
+.pyg_interest section .brandStreet {
+  width: 405px;
+  height: 100%;
+  border-left: 1px solid #ededed;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+.pyg_interest section .brandStreet h3 {
+  width: 365px;
+  height: 39px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid #ededed;
+  line-height: 39px;
+  color: #333;
+}
+.pyg_interest section .brandStreet a {
+  display: inline-block;
+}
+.pyg_interest section .brandStreet a img {
+  width: 100%;
+}
+.pyg_interest section .brandStreet a:first-of-type {
+  border-bottom: 1px solid #ededed;
+}
+.pyg_interest section .brandStreet .bottom {
+  display: flex;
+}
+.pyg_interest section .brandInStation {
+  width: 161px;
+  height: 100%;
+}
+.pyg_interest section .brandInStation ul {
+  width: 100%;
+  height: 100%;
+  padding: 5px 0 5px 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.pyg_interest section .brandInStation ul img {
+  width: 75px;
+  height: 38px;
+}
+.pyg_interest section .brandInStation ul li {
+  border-bottom: 1px dashed #e0e0e0;
+}
+.pyg_interest section .brandInStation ul li:nth-child(2n + 1) {
+  border-right: 1px dashed #e0e0e0;
+}
+.pyg_interest section .brandInStation ul li:nth-child(n + 19) {
+  border-bottom: 0;
+}
+.pyg_productModel {
+  height: 475px;
+  margin-top: 25px;
+}
+.pyg_productModel .tabContent {
+  height: 358px;
+}
+.pyg_productModel .tabContent .tabItem {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.pyg_productModel .tabContent .categories {
+  width: 209px;
+  background-color: #f9f9f9;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.pyg_productModel .tabContent .categories ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.pyg_productModel .tabContent .categories ul li {
+  width: 86px;
+  height: 32px;
+  border-bottom: 1px solid #ededed;
+  line-height: 32px;
+  text-align: center;
+}
+.pyg_productModel .tabContent .swiper {
+  width: 329px;
+  --swiper-theme-color: #fff;
+}
+.pyg_productModel .tabContent .show {
+  width: 220px;
+}
+.pyg_productModel .tabContent .show a {
+  width: 100%;
+  display: inline-block;
+}
+.pyg_productModel .tabContent .show a img {
+  width: 100%;
+}
+.pyg_productModel .tabContent .s1 > .top {
+  border-bottom: 1px solid #ededed;
+}
+.pyg_productModel .tabContent .s1 > .top img {
+  height: 100%;
+}
+.pyg_productModel .tabContent .s2 {
+  border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+}
+.pyg_productModel .brand {
+  height: 65px;
+  margin-top: 20px;
+  padding: 15px;
+  padding-left: 33px;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+.pyg_productModel .brand a {
+  height: 100%;
+  display: inline-block;
+  border-right: 1px dotted #ccc;
+  padding-right: 11px;
+  margin-right: 11px;
+}
+.pyg_productModel .brand a img {
+  height: 100%;
+}
+.pyg_productModel .brand a:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: 0;
+}
+.pyg_productModel > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  border-bottom: 2px solid #c81623;
+}
+.pyg_productModel > .top h2 {
+  color: #c81623;
+  font-size: 18px;
+  font-weight: 400;
+}
+.pyg_productModel > .top ul {
+  display: flex;
+  color: #999;
+}
+.pyg_productModel > .top ul li {
+  margin: 0 14px;
+}
+.pyg_productModel > .top ul .current a {
+  color: #c81623;
+}
