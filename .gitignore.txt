@@ -1,2 +1,0 @@
-#忽略swiper插件
-swiper/
